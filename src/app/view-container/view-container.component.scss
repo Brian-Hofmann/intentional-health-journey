@@ -1,0 +1,51 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #b15e00e6;
+  height: 80px;
+}
+
+.content-container {
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+}
+
+.logo {
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  color: white;
+}
+
+nav a {
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: black;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+}
+
