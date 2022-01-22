@@ -3,9 +3,12 @@
     <img class="logo" src="/assets/logo.png">
     <span>Intentional Health Journey</span>
   </div>
-  <nav>
+  <nav [ngClass]="showResponsiveMenu ? 'responsive' : ''">
     <a>Our Mission</a>
     <a>Contact Us</a>
+    <a class="responsive-menu-icon" (click)="toggleResponsiveMenu()">
+      <span class="fa fa-bars"></span>
+    </a>
   </nav>
 </div>
 <div class="content-container">

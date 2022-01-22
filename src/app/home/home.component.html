@@ -2,8 +2,54 @@
   <span id="main-text">Motivation and Support</span>
   <span id="subtitle">Journey to a Holistic Lifestyle</span>
   <span id="text-icon" class="fa fa-pagelines"></span>
+  <div class="white-circle"></div>
 </div>
-<div class="scroll-anchor-container">
+<div class="scroll-anchor-container" (click)="scrollToContent(content)">
   <span class="fa fa-chevron-down"></span>
+</div>
+<div #content class="content">
+  <div class="card-grid-container">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Recipe of the Month</mat-card-title>
+        <mat-card-subtitle>Noodles!</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/logo.png">
+      <mat-card-content>
+        <p>
+          If you like noodles, buckle up for this crazy ass recipe!
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Quote of the Month</mat-card-title>
+        <mat-card-subtitle>Nicolas Chamfort</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/logo.png">
+      <mat-card-content>
+        <p>
+          The most wasted day of all is that on which we have not laughed.
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Recommendation</mat-card-title>
+        <mat-card-subtitle>Noodles!</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/logo.png">
+      <mat-card-content>
+        <p>
+          It's possible you're not hungry but thirsty.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <h2>Want to learn more?</h2>
+  <div class="button-container">
+    <button color="primary" mat-raised-button><span class="fa fa-users"></span>Our Mission</button>
+    <button color="primary" mat-raised-button><span class="fa fa-clipboard"></span>Contact Us</button>
+  </div>
 </div>
 

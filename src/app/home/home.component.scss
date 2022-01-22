@@ -1,4 +1,5 @@
 .landing-words-flex-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,13 +39,84 @@
 }
 
 #main-text {
-  font-size: 120px;
+  font-size: 6vw;
 }
 
 #subtitle {
-  font-size: 60px;
+  font-size: 4vw;
 }
 
 #text-icon {
-  font-size: 60px;
+  font-size: 4vw;
+}
+
+.content {
+  background-color: #E7E2D5;
+  height: 90%;
+  padding: 50px;
+
+}
+
+.card-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  gap: 30px
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+h2 {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  font-size: 16px;
+}
+
+button span {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #main-text {
+    font-size: 1.5rem;
+  }
+
+  #subtitle {
+    font-size: 1rem;
+  }
+
+  #text-icon {
+    font-size: 30px;
+  }
+
+  .white-circle {
+    position: absolute;
+    height: 35vh;
+    width: 35vh;
+    bottom: 30%;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+
+  .content {
+    height: auto;
+  }
+
+  .card-grid-container {
+    grid-template-columns: auto;
+  }
+
 }

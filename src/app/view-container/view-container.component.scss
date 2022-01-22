@@ -33,6 +33,10 @@ nav {
   color: white;
 }
 
+nav .responsive-menu-icon {
+  display: none;
+}
+
 nav a {
   font-size: 20px;
   font-weight: bold;
@@ -43,11 +47,35 @@ nav a:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 767px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10px;
+nav div {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav a {
+    display: none;
   }
+
+  nav a.responsive-menu-icon {
+    float: right;
+    display: block;
+  }
+
+  nav.responsive {
+    position: relative;
+  }
+
+  nav.responsive .responsive-menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
 }
 
