@@ -1,20 +1,22 @@
 .toolbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   background-color: #3c3908db;
-  height: 80px;
 }
 
 .content-container {
-  height: calc(100vh - 80px);
+  position: absolute;
   overflow: auto;
+  height: calc(100vh - 90px);
+  width: 100%;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 20px;
-  height: 100%;
+  gap: 10px;
+  height: 80px;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -26,55 +28,67 @@
 
 nav {
   display: flex;
-  gap: 20px;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0 20px;
-  color: white;
+  overflow: hidden;
+  background-color: #3c3908db;
+  max-height: 90px;
+  transition: max-height 0.5s ease-in;
+}
+
+nav a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav a:nth-child(2) {
+  margin-left: auto;
+}
+
+nav a:hover:not(:last-child), span:hover {
+  color: #59b579;
+  cursor: pointer;
 }
 
 nav .responsive-menu-icon {
   display: none;
 }
 
-nav a {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #59b579;
-  cursor: pointer;
-}
-
-nav div {
-  display: none;
-}
-
 @media screen and (max-width: 600px) {
-  nav a {
+  nav a:not(:first-child):not(:last-child) {
     display: none;
   }
 
   nav a.responsive-menu-icon {
+    position: absolute;
+    top: 30px;
+    right: 0;
     float: right;
     display: block;
   }
 
   nav.responsive {
-    position: relative;
-  }
-
-  nav.responsive .responsive-menu-icon {
+    display: block;
     position: absolute;
-    right: 0;
-    top: 0;
+    max-height: 1000px;
+    width: 100%;
+    z-index: 2;
+    background-color: #3c3908;
   }
 
-  nav.responsive a {
-    float: none;
+  nav.responsive a:not(:first-child):not(:last-child) {
     display: block;
     text-align: left;
+    padding: 16px 16px;
+    border-top: 2px solid white;
+  }
+
+  .content-container {
+    top: 90px;
   }
 
 }

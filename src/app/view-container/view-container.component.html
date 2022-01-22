@@ -1,16 +1,16 @@
-<div class="toolbar">
-  <div class="logo-container">
-    <img class="logo" src="/assets/logo.png">
-    <span>Intentional Health Journey</span>
-  </div>
-  <nav [ngClass]="showResponsiveMenu ? 'responsive' : ''">
-    <a>Our Mission</a>
-    <a>Contact Us</a>
-    <a class="responsive-menu-icon" (click)="toggleResponsiveMenu()">
-      <span class="fa fa-bars"></span>
-    </a>
-  </nav>
-</div>
+<nav [ngClass]="showResponsiveMenu ? 'responsive' : ''">
+  <a (click)="routeToNewPage('')">
+    <div class="logo-container">
+      <img class="logo" src="/assets/logo.png">
+      <span>Intentional Health Journey</span>
+    </div>
+  </a>
+  <a (click)="routeToNewPage('contact-us')">Contact Us</a>
+  <a>Our Mission</a>
+  <a class="responsive-menu-icon" (click)="toggleResponsiveMenu()">
+    <i class="fa fa-bars"></i>
+  </a>
+</nav>
 <div class="content-container">
   <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,42 @@
+mat-card {
+  margin: 3% 20%;
+  background-color: #E7E2D5;
+}
+
+.flex-row {
+  display: flex;
+  gap: 30px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-label {
+  color: black;
+  font-size: 16px;
+}
+
+textarea {
+  height: 400px;
+  overflow: auto;
+  resize: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  mat-card {
+    margin: 0;
+    height: 100%;
+  }
+
+  .flex-row {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  textarea {
+    height: 350px;
+  }
+
+}
+

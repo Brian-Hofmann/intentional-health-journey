@@ -1,0 +1,31 @@
+<mat-card>
+  <form [formGroup]="contactForm">
+    <mat-card-content>
+      <div>
+        <h2>Contact Us</h2>
+        <div class="flex-row">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Comments or Questions</mat-label>
+          <textarea matInput formControlName="comments"></textarea>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="resetForm()">Clear Form</button>
+      <button mat-raised-button color="primary" [disabled]="!contactForm.valid" (click)="onSubmit()">Submit</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
