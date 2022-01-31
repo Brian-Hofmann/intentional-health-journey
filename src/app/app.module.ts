@@ -11,12 +11,15 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { OurMissionComponent } from './our-mission/our-mission.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     ViewContainerComponent,
     HomeComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    OurMissionComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [ViewContainerComponent]

@@ -49,13 +49,15 @@ nav a:nth-child(2) {
   margin-left: auto;
 }
 
-nav a:hover:not(:last-child), span:hover {
-  color: #59b579;
-  cursor: pointer;
-}
-
 nav .responsive-menu-icon {
   display: none;
+}
+
+@media (hover: hover) {
+  nav a:hover:not(:last-child), span:hover {
+    color: #59b579;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -92,4 +94,3 @@ nav .responsive-menu-icon {
   }
 
 }
-

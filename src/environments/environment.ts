@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  directusBaseURL: 'http://localhost:8055',
+  emailApiUrl: 'aws-email-api-url'
 };
 
 /*

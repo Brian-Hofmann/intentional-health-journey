@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AwsEmailService} from "../shared/aws-email.service";
+import {EmailResponse} from "../shared/service-types";
 
 @Component({
   selector: 'app-contact-us',
@@ -8,9 +10,9 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class ContactUsComponent {
 
-  contactForm: FormGroup
+  contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private emailService: AwsEmailService) {
     this.contactForm = fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -28,8 +30,9 @@ export class ContactUsComponent {
   }
 
   onSubmit() {
-    console.log(this.contactForm.value)
-    this.resetForm();
+    this.emailService.sendEmail(this.contactForm.value).subscribe((response: EmailResponse) => {
+      this.resetForm();
+    });
   }
 
 }

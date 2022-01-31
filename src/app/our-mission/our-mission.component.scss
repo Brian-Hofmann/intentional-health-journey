@@ -1,0 +1,25 @@
+mat-card {
+  margin: 2% 20%;
+  background-color: #E7E2D5;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  margin: 40px 0;
+}
+
+p {
+  font-size: 18px;
+  white-space: pre-wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  mat-card {
+    margin: 0;
+    height: 100%;
+  }
+
+}

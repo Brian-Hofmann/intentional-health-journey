@@ -17,7 +17,11 @@ export class ViewContainerComponent {
   }
 
   routeToNewPage(path: string) {
-    this.router.navigate([path]);
+    this.router.navigate([path]).then(() => {
+      if (path !== '') {
+        this.toggleResponsiveMenu();
+      }
+    });
   }
 
 }

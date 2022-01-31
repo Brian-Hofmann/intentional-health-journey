@@ -12,44 +12,43 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Recipe of the Month</mat-card-title>
-        <mat-card-subtitle>Noodles!</mat-card-subtitle>
+        <mat-card-subtitle><p>{{ recipe?.name }}</p></mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="assets/logo.png">
+      <img
+        mat-card-image
+        class="recipe-image"
+        (click)="openRecipe(recipe.document)"
+        [attr.src]=" environment.directusBaseURL + '/assets/' + recipe?.image"
+      >
       <mat-card-content>
-        <p>
-          If you like noodles, buckle up for this crazy ass recipe!
-        </p>
+        <p>{{ recipe?.description }}</p>
       </mat-card-content>
     </mat-card>
     <mat-card>
       <mat-card-header>
         <mat-card-title>Quote of the Month</mat-card-title>
-        <mat-card-subtitle>Nicolas Chamfort</mat-card-subtitle>
+        <mat-card-subtitle><p>{{ quote?.author }}</p></mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="assets/logo.png">
+      <img mat-card-image [attr.src]="environment.directusBaseURL + '/assets/' + quote?.image">
       <mat-card-content>
-        <p>
-          The most wasted day of all is that on which we have not laughed.
-        </p>
+        <p>{{ quote?.quote }}</p>
       </mat-card-content>
     </mat-card>
     <mat-card>
       <mat-card-header>
         <mat-card-title>Recommendation</mat-card-title>
-        <mat-card-subtitle>Noodles!</mat-card-subtitle>
+        <mat-card-subtitle><p>{{ recommendation?.title }}</p></mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="assets/logo.png">
+      <img mat-card-image [attr.src]="environment.directusBaseURL + '/assets/' + recommendation?.image">
       <mat-card-content>
-        <p>
-          It's possible you're not hungry but thirsty.
-        </p>
+        <p>{{ recommendation?.recommendation }}</p>
       </mat-card-content>
     </mat-card>
   </div>
   <h2>Want to learn more?</h2>
   <div class="button-container">
-    <button color="primary" mat-raised-button><span class="fa fa-clipboard"></span>Contact Us</button>
-    <button color="primary" mat-raised-button><span class="fa fa-users"></span>Our Mission</button>
+    <button color="primary" mat-raised-button (click)="routeToNewPage('contact-us')"><span class="fa fa-clipboard"></span>Contact Us</button>
+    <button color="primary" mat-raised-button (click)="routeToNewPage('our-mission')"><span class="fa fa-users"></span>Our Mission</button>
   </div>
 </div>
 
