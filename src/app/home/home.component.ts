@@ -39,8 +39,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate([path]);
   }
 
-  openRecipe(fileId: string) {
-    window.open('http://localhost:8055/assets/' + fileId)
+  openDocument(fileId: string) {
+    window.open(environment.directusBaseURL + '/assets/' + fileId)
   }
 
 }

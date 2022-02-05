@@ -19,6 +19,7 @@ export class Recommendation {
   title: string;
   recommendation: string;
   image: string;
+  document: string | undefined;
 }
 
 export class Mission {

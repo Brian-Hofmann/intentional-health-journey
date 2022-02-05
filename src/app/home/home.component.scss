@@ -64,8 +64,20 @@
 }
 
 mat-card {
+  max-height: 705px;
+  min-height: 705px;
   max-width: 400px;
   margin: auto;
+}
+
+mat-card-content {
+  height: 110px;
+  overflow: auto;
+}
+
+#quoteIcon {
+  color: #0a7831;
+  font-size: 30px;
 }
 
 h2 {
@@ -88,12 +100,13 @@ button span {
   margin-right: 10px;
 }
 
-.recipe-image {
-  cursor: pointer;
-}
-
 p {
   font-size: 18px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
