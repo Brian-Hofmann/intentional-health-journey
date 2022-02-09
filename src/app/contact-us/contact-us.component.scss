@@ -3,6 +3,10 @@ mat-card {
   background-color: #E7E2D5;
 }
 
+mat-card-content {
+  margin: 0;
+}
+
 .flex-row {
   display: flex;
   gap: 30px;
@@ -21,6 +25,15 @@ textarea {
   height: 400px;
   overflow: auto;
   resize: none !important;
+}
+
+.new-inquiry-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitting {
+  margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -13,6 +13,7 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OurMissionComponent } from './our-mission/our-mission.component';
 import {HttpClientModule} from "@angular/common/http";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [ViewContainerComponent]

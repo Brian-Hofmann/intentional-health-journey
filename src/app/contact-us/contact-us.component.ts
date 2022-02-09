@@ -11,6 +11,8 @@ import {EmailResponse} from "../shared/service-types";
 export class ContactUsComponent {
 
   contactForm: FormGroup;
+  formSubmitted = false;
+  submittingForm = false;
 
   constructor(private fb: FormBuilder, private emailService: AwsEmailService) {
     this.contactForm = fb.group({
@@ -21,18 +23,17 @@ export class ContactUsComponent {
     })
   }
 
-  resetForm() {
-    this.contactForm.reset();
-    Object.keys(this.contactForm.controls).forEach((key) => {
-      const control = this.contactForm.controls[key];
-      control.setErrors(null);
+  onSubmit() {
+    this.submittingForm = true;
+    this.emailService.sendEmail(this.contactForm.value).subscribe((response: EmailResponse) => {
+      this.submittingForm = false;
+      this.contactForm.reset();
+      this.formSubmitted = true;
     });
   }
 
-  onSubmit() {
-    this.emailService.sendEmail(this.contactForm.value).subscribe((response: EmailResponse) => {
-      this.resetForm();
-    });
+  get formEmailAddress(): string {
+    return this.contactForm.get('email')!.value;
   }
 
 }
