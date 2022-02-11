@@ -32,7 +32,7 @@
         <p>{{ quote?.quote }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <span id="quoteIcon" class="fa fa-pagelines"></span>
+        <span class="fa fa-pagelines bottom-card-icon"></span>
       </mat-card-actions>
     </mat-card>
     <mat-card>
@@ -44,8 +44,15 @@
       <mat-card-content>
         <p>{{ recommendation?.recommendation }}</p>
       </mat-card-content>
-      <mat-card-actions *ngIf="recommendation?.document">
-        <button color="primary" mat-raised-button (click)="openDocument(recommendation.document!)"><span class="fa fa-newspaper-o"></span>Full Document</button>
+      <mat-card-actions>
+        <button
+          *ngIf="recommendation?.document"
+          color="primary"
+          mat-raised-button
+          (click)="openDocument(recommendation.document!)"
+        >
+          <span class="fa fa-newspaper-o"></span>Full Document</button>
+        <span *ngIf="!recommendation?.document" class="fa fa-pagelines bottom-card-icon"></span>
       </mat-card-actions>
     </mat-card>
   </div>

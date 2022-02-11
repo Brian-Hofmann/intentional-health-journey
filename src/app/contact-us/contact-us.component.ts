@@ -23,13 +23,17 @@ export class ContactUsComponent {
     })
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.submittingForm = true;
     this.emailService.sendEmail(this.contactForm.value).subscribe((response: EmailResponse) => {
       this.submittingForm = false;
-      this.contactForm.reset();
       this.formSubmitted = true;
     });
+  }
+
+  handleNewInquiry(): void {
+    this.contactForm.reset();
+    this.formSubmitted = false;
   }
 
   get formEmailAddress(): string {

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   directusBaseURL: 'http://localhost:8055',
-  emailApiUrl: 'https://le8iz57ayk.execute-api.us-east-1.amazonaws.com/send-email'
+  emailApiUrl: 'https://osiohnk6ml.execute-api.us-west-2.amazonaws.com/sendEmail'
 };
 
 /*

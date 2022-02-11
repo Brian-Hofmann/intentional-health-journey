@@ -3,7 +3,7 @@
     <h3>Form Submitted Successfully</h3>
     <p>Your inquiry has been received and will be answered as soon as possible. The reply will be sent to: <strong>{{ formEmailAddress }}</strong></p>
     <div class="new-inquiry-container">
-      <button color="primary" mat-raised-button (click)="formSubmitted = false">Submit New Inquiry</button>
+      <button color="primary" mat-raised-button (click)="handleNewInquiry()">Submit New Inquiry</button>
     </div>
   </ng-container>
   <ng-template #form>
