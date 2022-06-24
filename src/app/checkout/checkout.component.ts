@@ -81,7 +81,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   private initPaypalConfig(service: Service, price?: string): void {
-    console.log(price)
     this.payPalConfig = {
       currency: 'USD',
       clientId: environment.paypalClientId,
