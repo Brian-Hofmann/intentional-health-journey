@@ -1,0 +1,22 @@
+<div class="container">
+  <ng-container *ngFor="let service of services">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ service.name }}</mat-card-title>
+        <mat-card-subtitle><p>{{ service.type === 'inPerson' ? 'In Person' : 'Virtual' }}</p></mat-card-subtitle>
+      </mat-card-header>
+      <div mat-card-image style="height: 300px" *ngIf="service.location" [innerHTML]="parseLocation(service.location)"></div>
+      <img mat-card-image height="300px" *ngIf="service.image" [attr.src]=" environment.directusBaseURL + '/assets/' + service.image">
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let detail of service.details">{{ detail.detail }}</li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button color="primary" mat-raised-button (click)="routeToCheckout(service.id)">
+          {{ !isDonation(service.price) ? ('$' + service.price + ' '  + (service.interval ?? '')) : 'Donate'}}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>

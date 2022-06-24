@@ -27,6 +27,29 @@ export class Mission {
   summary: string
 }
 
+export class Service {
+  id: number
+  name: string;
+  type: 'inPerson' | 'virtual';
+  price: string;
+  interval?: string;
+  details: ServiceDetail[];
+  location?: string;
+  image?: string;
+}
+
+export class ServiceDetail {
+  detail: string
+}
+
+export class Transaction {
+  firstName: string;
+  lastName: string;
+  email: string;
+  serviceName: string;
+  total: string
+}
+
 export class EmailPayload {
   fistName: string;
   lastName: string;

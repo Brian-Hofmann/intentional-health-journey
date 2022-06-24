@@ -1,0 +1,57 @@
+mat-card {
+  margin: 2% 10%;
+  background-color: var(--card-color);
+  height: 85%;
+}
+
+mat-card-content {
+  height: 100%;
+  padding: 0 16px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  height: 90%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.12);
+  grid-template-columns: 3fr 2fr;
+  gap: 2px
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: auto;
+  background-color: var(--card-color);
+}
+
+.order-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  font-size: larger;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: auto;
+  }
+
+  .grid-item {
+    overflow: visible;
+  }
+
+  mat-card {
+    height: auto;
+    margin: 20px;
+  }
+
+}

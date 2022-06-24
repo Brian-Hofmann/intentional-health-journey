@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   directusBaseURL: 'http://localhost:8055',
-  emailApiUrl: 'https://osiohnk6ml.execute-api.us-west-2.amazonaws.com/sendEmail'
+  emailApiUrl: 'https://osiohnk6ml.execute-api.us-west-2.amazonaws.com/sendEmail',
+  paypalClientId: 'sb'
 };
 
 /*

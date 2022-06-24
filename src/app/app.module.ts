@@ -14,27 +14,33 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OurMissionComponent } from './our-mission/our-mission.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { ServicesComponent } from './services/services.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import {NgxPayPalModule} from "ngx-paypal";
 
 @NgModule({
   declarations: [
     ViewContainerComponent,
     HomeComponent,
     ContactUsComponent,
-    OurMissionComponent
+    OurMissionComponent,
+    ServicesComponent,
+    CheckoutComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatProgressBarModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatProgressBarModule,
+        NgxPayPalModule
+    ],
   providers: [],
   bootstrap: [ViewContainerComponent]
 })

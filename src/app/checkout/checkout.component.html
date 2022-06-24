@@ -1,0 +1,40 @@
+<mat-card [ngStyle]="{'height': success || error ? 'auto' : ''}">
+  <mat-card-header>
+    <mat-card-title>{{ cardTitle }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngIf="success || error; else checkout">
+      <h3 *ngIf="success">{{ successMessage }}</h3>
+      <h3 *ngIf="error">Please try again. If error persists, please email info@intentionalhealthjourney.com</h3>
+    </ng-container>
+    <ng-template #checkout>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="order-description-container">
+            <ng-container *ngIf="isDonation; else purchase">
+              <h3>Please Enter a Dollar Amount:</h3>
+              <mat-form-field appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input matInput type="number" [(ngModel)]="donationAmount" (keyup)="keyDownHandler($event)">
+              </mat-form-field>
+              <button mat-raised-button color="primary" (click)="handleConfirmAmount()">Confirm Amount</button>
+            </ng-container>
+            <ng-template #purchase>
+              <h3>{{ 'Service: ' + service?.name }}</h3>
+              <h3>{{ 'Price: $' + service?.price }}</h3>
+            </ng-template>
+            <div *ngIf="service?.details?.length">
+              <h3>Details:</h3>
+              <ul>
+                <li *ngFor="let detail of service?.details">{{ detail.detail }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
